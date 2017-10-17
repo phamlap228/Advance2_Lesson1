@@ -21,8 +21,9 @@ public class SmileView extends View {
     private float mCenterY;
     private float mRadius;
     private RectF mArcBounds = new RectF();
+
     public SmileView(Context context) {
-        super(context,null);
+        super(context, null);
     }
 
     public SmileView(Context context, @Nullable AttributeSet attrs) {
@@ -32,6 +33,7 @@ public class SmileView extends View {
     public SmileView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
+
     private void initPaints() {
         mCirclePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mCirclePaint.setStyle(Paint.Style.FILL);
@@ -71,7 +73,7 @@ public class SmileView extends View {
         canvas.drawCircle(mCenterX - eyeOffsetX, mCenterY - eyeOffsetY, eyeRadius, mEyeAndMouthPaint);
         canvas.drawCircle(mCenterX + eyeOffsetX, mCenterY - eyeOffsetY, eyeRadius, mEyeAndMouthPaint);
         // draw mouth
-        float mouthInset = mRadius /3f;
+        float mouthInset = mRadius / 3f;
         mArcBounds.set(mouthInset, mouthInset, mRadius * 2 - mouthInset, mRadius * 2 - mouthInset);
         canvas.drawArc(mArcBounds, 45f, 90f, false, mEyeAndMouthPaint);
     }
